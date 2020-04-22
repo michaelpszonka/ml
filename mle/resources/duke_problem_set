@@ -1,0 +1,59 @@
+http://www2.stat.duke.edu/~jerry/sta101/extraproblems/bayesianans.htm
+
+
+1.  The weather, the weather
+
+It's a typically hot morning in June in Durham.  You look outside and see some dark clouds rolling in.  Is it going to rain?
+
+Historically, there is a 30% chance of rain on any given day in June.  Furthermore, on days when it does in fact rain, 95% of the time there are dark clouds that roll in during the morning.   But, on days when it does not rain, 25% of the time there are dark clouds that roll in during the morning.
+
+Given that there are dark clouds rolling in, what is the chance that it will rain?
+
+2.  Auditing tax returns
+
+When IRS receives tax forms, it puts them through a computer to flag forms that need to be investigated further.  The computer looks for mistakes in the forms, for example addition mistakes or incorrect deduction amounts.  Suppose the computer correctly flags 80% of all returns that have mistakes, and it incorrectly flags 5% of error-free returns.  Further, suppose that 15% of all tax returns have errors.
+
+A tax return is flagged by the computer.  What is the chance that it actually contains mistakes, given that the computer flagged it?
+
+3.  Paternity suits
+Legal cases of disputed paternity in many countries are resolved using blood tests.  Laboratories make genetic determinations concerning the mother, child, and alleged father.
+
+You are on a jury considering a paternity suit.  The mother has blood type O, and the alleged father has blood type AB.
+
+A blood test shows that the child has blood type B.   What is the chance that the alleged father is in fact the real father, given that the child has blood type B?
+
+Here's some information we need to solve the problem.  According to genetics, there is a 50% chance that this child will have blood type B if this alleged father is the real father.  Furthermore, based on incidence rates of B genes in the population, there is a 9% chance that this child would have blood type B if this alleged father is not the real father.
+
+Based on other evidence (e.g., testimonials, physical evidence, records) presented before the DNA test, you believe there is a 75% chance that the alleged father is the real father.  This assessment is your prior belief.  Now, we need to use Bayes Rule to update it for the results of the child's blood test.
+
+4.  Differences between Bayesian and classical inference
+
+Decide whether the following statements are true or false.  In the questions, "mu" is the population mean of a normal curve used to describe SAT scores for Duke students.  Assume inferences are based on a random sample of 100 Duke students.
+a)  In classical inference, the probability, Pr(mu > 1400), is a number strictly bigger than zero and strictly less than one.
+b)  In Bayesian inference, the probability, Pr(mu > 1400), is a number strictly bigger than zero and strictly less than one.
+c)  In classical inference, our best guess at mu is its maximum likelihood estimate.
+d)  If you have very strong prior beliefs about mu, the Bayesian's best guess at mu will be affected by those beliefs.
+e)  If you draw a likelihood function for mu, the best guess at mu is the number corresponding to the top of the hill in the likelihood function.
+
+5.  Angioplasty
+
+Angioplasty is a medical procedure in which clogged heart arteries are widened by inserting and partially filling a balloon in the arteries.   Some people have serious reactions to angioplasty, such as severe chest pains, heart attacks, or sudden death.  In a recent study published in Science, researchers reported that 28 out of 127 adults (under age 70) who had undergone angioplasty had severe reactions.
+
+For simplicity, suppose your prior beliefs on the population percentage of adults (under age 70) who have severe reactions to angioplasty has the following distribution:
+p        Pr(p)
+----------------
+0         1/11
+0.10    1/11
+0.20    1/11
+0.30    1/11
+0.40    1/11
+0.50    1/11
+0.60    1/11
+0.70    1/11
+0.80    1/11
+0.90    1/11
+1.00    1/11
+
+a) What is the posterior distribution of p?
+b)  What is the posterior probability that p exceeds 50%?
+ 
