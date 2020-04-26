@@ -1,3 +1,4 @@
+import numpy as np
 from math import pi, sqrt, exp, pow
 
 #reads input file
@@ -47,7 +48,7 @@ def calculate_probability(x, mean, stdev):
 
 def predict(training_summary, test_data, total_rows):
     probabilities = dict()
-    feature_rows = len(test_data)
+    feature_rows = len(test_data) - 1
     p = 0
     for label in training_summary:
         for f in range(feature_rows):
@@ -57,14 +58,35 @@ def predict(training_summary, test_data, total_rows):
 
     return probabilities
 
+def accuracy(results, test_data):
+    correct_count = 0
+    for i in range(len(results)):
+        row = results[i]
+        actual_label = test_data[i][-1]
+        predicted_label = max(row, key=row.get)
+        if(predicted_label == actual_label):
+            correct_count += 1
 
+    print("Predicted accuracy of iris flower data: " + "{:.2%}".format(correct_count/len(test_data)))
 
+def process_row_data(row):
+    processed_row = row[0:-1]
+    for i in range(len(processed_row)):
+        processed_row[i] = float(processed_row[i])
+    processed_row.append(row[-1])
+    return processed_row
 
 
 if __name__ == '__main__':
-    test_data = (get_data('iris_flowers'))
-    test_value = [5.1,3.5,1.4,0.2]
-    data_sum = summarize(test_data)
-    res = predict(data_sum, test_value, len(test_data))
+    training_data = get_data('iris_flowers')
+    td_np = np.array(training_data)
+    np.random.shuffle(td_np)
+    test_data = td_np[:15, :]
+    test_data = [process_row_data(row) for row in test_data.tolist()]
 
-    print(res)
+    # test_value = [5.1,3.5,1.4,0.2]
+    training_data_summary = summarize(training_data)
+
+    res = [predict(training_data_summary, td, len(training_data)) for td in test_data]
+
+    accuracy(res, test_data)
