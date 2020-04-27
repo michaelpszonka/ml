@@ -4,7 +4,7 @@ from math import pi, sqrt, exp, pow
 #reads input file
 def get_data(file_name):
     data = list()
-    file = open(f'../naive_bayes/data/{file_name}', 'r')
+    file = open(f'../data/{file_name}', 'r')
     for line in file.readlines():
         row = line.split(',')
         processed_row = list()
@@ -81,7 +81,7 @@ if __name__ == '__main__':
     training_data = get_data('iris_flowers')
     td_np = np.array(training_data)
     np.random.shuffle(td_np)
-    test_data = td_np[:15, :]
+    test_data = td_np[:3, :]
     test_data = [process_row_data(row) for row in test_data.tolist()]
 
     # test_value = [5.1,3.5,1.4,0.2]
